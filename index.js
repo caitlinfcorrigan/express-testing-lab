@@ -21,8 +21,12 @@ app.get('/', (req, res) => {
 const gifs = require('./controllers/gifs');
 app.use('/gifs', gifs);
 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
 	console.log(
 		'Hello world! ⭐️ Express GAphy API listening on port ' + app.get('port')
 	);
 });
+
+
+
+module.exports = {app, server}
